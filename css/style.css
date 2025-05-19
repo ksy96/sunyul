@@ -1,0 +1,534 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(130, 130, 130, 0.6);
+  z-index: 999;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+/* 섹션 공통 */
+.section {
+  position: relative;
+}
+
+/* Section 1: 타이틀 */
+.text {
+  position: absolute;
+  top: 80px;
+  left: 80px;
+}
+
+.text1 {
+  position: absolute;
+  top: 200px;
+  left: 80px;
+}
+
+.big {
+  font-size: 100px;
+}
+
+.small {
+  font-size: 20px;
+  display: inline-block;
+}
+
+/* Section 2: 포트폴리오 */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 36px;
+}
+
+.sidebar {
+  width: 300px;
+  margin-left: 150px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  width: 200px;
+  padding-top: 50px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.portfolio-list {
+  padding-top: 40px;
+}
+
+.portfolio-item {
+  font-size: 22px;
+  margin: 20px 0;
+  cursor: pointer;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+.portfolio-item:hover {
+  color: #444;
+}
+
+.portfolio-item.active {
+  font-size: 26px;
+  font-weight: bold;
+  border-bottom: 3px solid black;
+}
+
+.viewer-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-wrapper {
+  width: 1000px;
+  height: 720px;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Section 3: 프로필 */
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  border: 1px solid #000;
+}
+
+.wleft {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.who {
+  font-size: 180px;
+  font-weight: bold;
+}
+
+.who .w {
+  color: black;
+}
+
+.who .ho {
+  color: #a55;
+}
+
+.right {
+  width: 50%;
+  border-left: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.profile-header {
+  padding: 35px 0 0 10px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.profile-content {
+  padding: 20px 40px;
+  transition: opacity 0.2s ease;
+}
+
+.profile-content.hide {
+  display: none;
+}
+
+.profile-info {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.intro-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 1px solid #000;
+  transition: top 0.5s ease, bottom 0.5s ease;
+}
+
+.intro-wrapper.move-up {
+  bottom: auto;
+  top: 90px;
+}
+
+.intro-header {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 6px 20px;
+  cursor: pointer;
+}
+
+.intro-content {
+  font-size: 16px;
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 20px;
+}
+
+.intro-content.show {
+  max-height: 300px;
+  opacity: 1;
+  padding-top: 10px;
+}
+
+/* Section 4: 원형 인터페이스 */
+.section-circle-wrapper {
+  position: relative;
+  width: 900px;
+  height: 900px;
+  margin: 0 auto;
+}
+
+.section-circle-line {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.section-circle-line svg {
+  width: 100%;
+  height: 100%;
+}
+
+.section-circle-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  background: #9c8d83;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 22px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  color: #000;
+}
+
+.section-circle-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(360px) rotate(calc(-1 * var(--angle)));
+  transform-origin: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: gray;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease, border-radius 0.5s ease;
+}
+
+.section-circle-item.active {
+  width: 180px;
+  height: 240px;
+  border-radius: 24px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+.section-circle-item.active::before {
+  content: attr(data-label);
+  white-space: pre-line;
+}
+
+/* 색상 테마 */
+.circle-color-0 {
+  background-color: #4b4b4b;
+}
+
+.circle-color-1 {
+  background-color: #03c75a;
+}
+
+.circle-color-2 {
+  background-color: #d62976;
+}
+
+.circle-color-3 {
+  background-color: #ff4d4d;
+}
+
+.circle-color-4 {
+  background-color: #fbbc05;
+}
+
+.circle-color-5 {
+  background-color: #4285f4;
+}
+
+.active.circle-color-0 {
+  background-color: #6c6c6c;
+}
+
+.active.circle-color-1 {
+  background-color: #05a24c;
+}
+
+.active.circle-color-2 {
+  background-color: #b72468;
+}
+
+.active.circle-color-3 {
+  background-color: #cc3939;
+}
+
+.active.circle-color-4 {
+  background-color: #d4a305;
+}
+
+.active.circle-color-5 {
+  background-color: #3167d2;
+}
+
+/* TOP 버튼 */
+.top {
+  bottom: 100px;
+  right: 100px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+.top img {
+  width: 100%;
+  height: 100%;
+}
+
+.section:nth-child(1) {
+  background: url('../img/로고.png') no-repeat right;
+  background-size: 40%;
+  background-position: 1100px 200px;
+}
+
+
+/* 반응형 (Mobile) */
+@media (max-width: 768px) {
+  .section:nth-child(1) {
+    background-position: center 380px;
+    background-size: 60%;
+  }
+
+  .section-circle-wrapper {
+    width: 520px;
+    height: 520px;
+  }
+
+  .section-circle-center {
+    width: 100px;
+    height: 100px;
+    font-size: 14px;
+  }
+
+  .section-circle-item {
+    width: 28px;
+    height: 28px;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translate(180px) rotate(calc(-1 * var(--angle)));
+  }
+
+  .section-circle-item.active {
+    width: 100px;
+    height: 120px;
+    font-size: 12px;
+  }
+
+  .section:nth-child(1) {
+    background-position: center 380px;
+    background-size: 60%;
+  }
+
+  .who {
+    font-size: 50px;
+    height: 20%;
+  }
+
+  .who .w,
+  .who .ho {
+    font-size: 100px;
+  }
+
+  .section:nth-child(1) {
+    background-position: center 380px;
+    background-size: 60%;
+  }
+
+  .top {
+    bottom: 50px;
+    right: 50px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .sidebar {
+    width: 250px;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  header nav ul li {
+    padding: 10px 10px;
+    text-transform: uppercase;
+  }
+
+  .portfolio-item {
+    font-size: 15px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    text-align: center;
+    transition: 0.2s ease;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-top: 0px;
+  }
+
+  .portfolio-list {
+    padding-top: 5px;
+    align-items: center;
+  }
+
+  .video-wrapper {
+    width: 450px;
+    height: 400px;
+    max-width: 480px;
+    background: black;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .viewer-container {
+    width: 100%;
+    align-items: center;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .wleft {
+    width: 100%;
+    height: 50%;
+  }
+  .right {
+    width: 100%;
+    height: 50%;
+  }
+.profile-content {
+    padding-bottom: 80px;
+    transition: opacity 0.2s ease;
+}
+}

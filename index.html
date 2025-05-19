@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>권순율 포트폴리오</title>
+   <meta name="robots" content="All">
+    <meta name="Yeti" content="index, follow">
+    <meta name="Yeti" content="All">
+    <meta name="googlebot" content="All">
+    <meta name="googlebot" content="index, follow">
+    <meta name="daum" content="All">
+    <meta name="daum" content="index, follow">
+    <meta name="title" content="영상편집자 - 권순율 포트폴리오">
+    <meta name="description" content="영상편집자 권순율입니다. 포트폴리오 방문을 환영">
+    <meta name="keywords" content="영상편집자,대구 영상편집">
+    <meta name="author" content="권순율">
+    <meta name="content-language" content="kr">
+
+
+    <meta property="og:type" content="website"> 
+    <meta property="og:site_name" content="pooh">
+    <meta property="og:title" content="권순율 포트폴리오">
+    <meta property="og:description" content="영상편집자를 지원하는 권순율 입니다."> 
+    <meta property="og:image" content="img/썸네일.jpg">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="300">
+  <link rel="stylesheet" href="css/fullpage.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/fullpage.js"></script>
+  <script src="js/main.js" defer></script>
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li data-menuanchor="page1"><a href="#page1">Main</a></li>
+        <li data-menuanchor="page2"><a href="#page2">Portfolio</a></li>
+        <li data-menuanchor="page3"><a href="#page3">Profile</a></li>
+        <li data-menuanchor="page4"><a href="#page4">Content</a></li>
+        <li data-menuanchor="page5"><a href="#page5">Footer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="sunyul">
+    <!-- Section 1: Title -->
+    <section class="section">
+      <h1 class="text">
+        <span class="big">순</span>
+        <span class="small">발력 있게 늘 배움의 자세로</span>
+      </h1>
+      <h1 class="text1">
+        <span class="big">율</span>
+        <span class="small">동감 있게 성장하는 편집자입니다.</span>
+      </h1>
+    </section>
+
+    <!-- Section 2: Portfolio -->
+    <section class="section">
+      <div class="container">
+        <div class="sidebar">
+          <div class="title">포트폴리오</div>
+          <div class="subtitle">영상편집 →</div>
+          <ul class="portfolio-list">
+            <li class="portfolio-item" onclick="selectPortfolio(0)">1 - 포트폴리오</li>
+            <li class="portfolio-item" onclick="selectPortfolio(1)">2 - 포트폴리오</li>
+            <li class="portfolio-item" onclick="selectPortfolio(2)">3 - 포트폴리오</li>
+            <li class="portfolio-item" onclick="selectPortfolio(3)">4 - 포트폴리오</li>
+            <li class="portfolio-item" onclick="selectPortfolio(4)">5 - 포트폴리오</li>
+          </ul>
+        </div>
+        <div class="viewer-container">
+          <div class="video-wrapper">
+            <iframe id="youtubePlayer" src="allowfullscreen"></iframe>
+          </div>
+          <div class="description" id="desc">포트폴리오 영상을 선택해주세요.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Profile -->
+    <section class="section">
+      <div class="wrapper">
+        <div class="wleft">
+          <div class="who">
+            <span class="w">W</span><span class="ho" id="whoTail">ho</span>
+          </div>
+        </div>
+        <div class="right">
+          <div>
+            <div class="profile-header">프로필</div>
+            <div id="profileContent" class="profile-content">
+              <div class="profile-info">
+                <p><strong>자기소개</strong></p>
+                <p>안녕하세요 권순율입니다.</p>
+                <p>최선을 다하고 있습니다.</p>
+              </div>
+            </div>
+          </div>
+          <div id="introWrapper" class="intro-wrapper">
+            <div class="intro-header" onclick="toggleIntro()">자기소개</div>
+            <div class="intro-content" id="introContent">
+              <p><strong>안녕하세요. 저는 영상편집자 권순율입니다.</strong></p>
+              <p>배움의 자세로 매 순간 최선을 다하고 있습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Circle Interface -->
+    <section class="section">
+      <div class="section-circle-wrapper">
+        <div class="section-circle-line">
+          <svg viewBox="0 0 900 900">
+            <circle cx="450" cy="450" r="360" stroke="#ccc" stroke-width="2" fill="none" />
+          </svg>
+        </div>
+        <div class="section-circle-center">Content</div>
+        <div class="section-circle-item circle-color-0" style="--angle: 0deg;" data-label="QR"></div>
+        <div class="section-circle-item circle-color-1" style="--angle: 60deg;" data-label="@naver.com"></div>
+        <div class="section-circle-item circle-color-2" style="--angle: 120deg;" data-label="Instagram"></div>
+        <div class="section-circle-item circle-color-3" style="--angle: 180deg;" data-label="YouTube"></div>
+        <div class="section-circle-item circle-color-4" style="--angle: 240deg;" data-label="?"></div>
+        <div class="section-circle-item circle-color-5" style="--angle: 300deg;" data-label="Portfolio"></div>
+      </div>
+      <div data-menuanchor="page1">
+        <a href="#page1" class="top">
+          <img src="img/1111.png" alt="Top Button">
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 5: Footer -->
+    <div class="section fp-auto-height">
+      <p>푸터</p>
+    </div>
+  </main>
+</body>
+</html>
