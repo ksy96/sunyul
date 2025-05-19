@@ -399,8 +399,8 @@ iframe {
   }
 
   .section-circle-wrapper {
-    width: 520px;
-    height: 520px;
+    width: 380px;
+    height: 420px;
   }
 
   .section-circle-center {
@@ -412,7 +412,7 @@ iframe {
   .section-circle-item {
     width: 28px;
     height: 28px;
-    transform: translate(-50%, -50%) rotate(var(--angle)) translate(180px) rotate(calc(-1 * var(--angle)));
+    transform: translate(-50%, -50%) rotate(var(--angle)) translate(133px) rotate(calc(-1 * var(--angle)));
   }
 
   .section-circle-item.active {
@@ -495,8 +495,8 @@ iframe {
   }
 
   .video-wrapper {
-    width: 450px;
-    height: 400px;
+    width: 370px;
+    height: 380px;
     max-width: 480px;
     background: black;
     border-radius: 12px;
@@ -530,5 +530,14 @@ iframe {
 .profile-content {
     padding-bottom: 80px;
     transition: opacity 0.2s ease;
+}
+.text {
+  left: 30px;
+} 
+.text1 {
+  left: 30px;
+}
+.small {
+  font-size: 18px;
 }
 }
