@@ -43,16 +43,34 @@ afterLoad: function (anchorLink, index) {
           src: "img/Comp 1.mp4",
           desc: "5번 포트폴리오 영상입니다."
         }
+        
       ];
-  
-      const items = document.querySelectorAll(".portfolio-item");
-      items.forEach((item, i) => {
-        item.classList.toggle("active", i === index);
-      });
-  
-      document.getElementById("youtubePlayer").src = portfolioVideos[index].src;
-      document.getElementById("desc").textContent = portfolioVideos[index].desc;
-    };
+
+      
+  const videoElement = document.getElementById("portfolioVideo");
+  const descElement = document.getElementById("desc");
+  const blackbox = document.querySelector(".blackbox");
+  const items = document.querySelectorAll(".portfolio-item");
+
+  items.forEach((item, i) => {
+    item.classList.toggle("active", i === index);
+  });
+
+  // 기존 영상 초기화 후 새로 재생
+  videoElement.pause();
+  videoElement.currentTime = 0;
+  videoElement.src = portfolioVideos[index].src;
+
+  // 보여지는 상태 전환
+  videoElement.style.display = "block";
+  blackbox.style.display = "none";
+  descElement.textContent = portfolioVideos[index].desc;
+
+  // 자동 재생 실행
+  videoElement.play().catch(err => {
+    console.warn("자동재생 실패", err);
+  });
+};
   
     // 원형 circle 반응형 대응
     function updateCircleRadius() {
